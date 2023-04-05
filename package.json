@@ -1,0 +1,17 @@
+{
+  "name": "tugas-chapter4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "@types/faker": "5.5.3",
+    "faker": "^5.5.3"
+  }
+}
