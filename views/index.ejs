@@ -1,0 +1,58 @@
+<%- include("layouts/header") %>
+<div class="main-container">
+  <div class="row g-0">
+    <div class="col-1 p-0">
+      <div class="sidebar-primary">
+        <div class="sidebar-logo m-auto"></div>
+        <div class="mt-4">
+          <div class="d-flex flex-column justify-content-center align-items-center p-2">
+            <img src="./assets/img/icons/Home.svg" alt="" class="icon-sidebar_primary" />
+            <p class="text-white fs-sidebar_primary">Dashboard</p>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-center p-2">
+            <img src="./assets/img/icons/Truck.svg" alt="" class="icon-sidebar_primary" />
+            <p class="text-white fs-sidebar_primary">Cars</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col p-0">
+      <%- include("layouts/navbar") %>
+      <div class="row g-0">
+        <div class="col-2 p-0 bg-white sidebar-secondary">
+          <div class="left-sidebar">
+            <ul class="nav flex-column sidebar-nav">
+              <li class="nav-item">
+                <a href="#" class="nav-link active fw-bold"> Cars </a>
+              </li>
+              <li class="nav-item mt-4">
+                <a href="#" class="nav-link active fw-bold">List Cars</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col p-5">
+          <div class="breadcrumb d-flex align-items-center gap-2">
+            <span class=""><a href="#" class="nav-link fw-bold">Cars</a></span>
+            <img src="./assets/img/icons/arrowBreadcumbs.svg" alt="" />
+            <span class="" aria-current="page" class="nav-link">List Car</span>
+          </div>
+          <% if (messages.create) { %>
+          <div class="position-absolute start-50 alert alert-success text-white text fs-5" role="alert" style="background-color: #73ca5c; padding-left: 150px; padding-right: 150px"> <%= messages.create %> </div>
+          <% } %> <% if (messages.update) { %>
+          <div class="position-absolute start-50 alert alert-success text-white text fs-5" role="alert" style="background-color: #73ca5c; padding-left: 150px; padding-right: 150px"> <%= messages.update %> </div>
+          <% } %>
+          <div class="d-flex justify-content-between mt-5">
+            <h3>List Car</h3>
+            <div class="btn btn-add_custom">
+              <img src="./assets/img/icons/fi_plus.svg" alt="" />
+              <a href="/create">Add New Car</a>
+            </div>
+          </div>
+          <div class="row mt-5 g-2"> <%- include("./layouts/cardMobil.ejs") %> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("layouts/footer") %>
