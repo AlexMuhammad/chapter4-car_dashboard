@@ -37,11 +37,7 @@
             <img src="./assets/img/icons/arrowBreadcumbs.svg" alt="" />
             <span class="" aria-current="page" class="nav-link">List Car</span>
           </div>
-          <% if (messages.create) { %>
-          <div class="position-absolute start-50 alert alert-success text-white text fs-5" role="alert" style="background-color: #73ca5c; padding-left: 150px; padding-right: 150px"> <%= messages.create %> </div>
-          <% } %> <% if (messages.update) { %>
-          <div class="position-absolute start-50 alert alert-success text-white text fs-5" role="alert" style="background-color: #73ca5c; padding-left: 150px; padding-right: 150px"> <%= messages.update %> </div>
-          <% } %>
+          <%- include("layouts/alert.ejs") %>
           <div class="d-flex justify-content-between mt-5">
             <h3>List Car</h3>
             <div class="btn btn-add_custom">

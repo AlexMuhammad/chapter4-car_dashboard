@@ -73,12 +73,20 @@ body {
   border-radius: 2px;
   padding: 8px, 12px, 8px, 12px;
 }
+.btn-add_custom a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn-add_custom:hover {
+  background-color: #2f44a0;
+}
 
 .btn-custom_delete {
   border: 2px solid #fa2c5a;
   border-radius: 2px;
-  width: 200px;
   height: 48px;
+  width: 150px;
   color: #fa2c5a;
   font-weight: bold;
 }
@@ -86,10 +94,24 @@ body {
 .btn-custom_edit {
   background-color: #5cb85f;
   border-radius: 2px;
-  width: 200px;
   height: 48px;
+  width: 150px;
   color: #fff;
   font-weight: bold;
+}
+.btn-custom_edit a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-custom_edit:hover {
+  background-color: #72d576;
+  opacity: 0px;
+}
+
+.btn-custom_delete:hover {
+  background-color: #ff6f8f;
+  color: #fff;
 }
 
 .btn-custom_delete img {
@@ -107,9 +129,19 @@ body {
   border-radius: 2px;
 }
 
+.btn-cancel:hover {
+  background-color: #0d28a6;
+  color: white;
+}
+
 .btn-save {
   background-color: #0d28a6;
   color: #fff;
   font-weight: bold;
   border-radius: 2px;
+}
+
+.btn-save:hover {
+  background-color: #344bb0;
+  color: white;
 }

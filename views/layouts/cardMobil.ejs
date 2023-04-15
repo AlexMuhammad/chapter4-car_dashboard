@@ -1,29 +1,28 @@
-            <%- include("../builtin/getUpdate.ejs") %>
-            <%- include("../builtin/getFormatMoney.ejs") %>
-              <% cars.forEach(car => { %>
-                <div class="col-4">
-                  <div class="card">
-                    <img src="<%= car.image %>" class="card-img-top p-5" alt="..." />
-                    <div class="card-body">
-                      <h6 class="card-subtitle"><%= car.name %> / <%= car.type %></h6>
-                      <h5 class="card-title my-3">Rp. <%= getMoneyFormat(car.rentPrice) %> / hari</h5>
-                      <p class="card-text">
-                        <img src="./assets/img/icons/clock.svg" alt="" />
-                        Updated at <%= getUpdatedAt(car.updatedAt) %>
-                      </p>
-                      <div class="d-flex justify-content-between gap-3 align-items-center">
-                        <form action="/delete/<%= car.id %>">
-                          <button class="btn btn-custom_delete" type="submit">
-                            <img src="./assets/img/icons/Trash.svg" alt="" />
-                           Delete
-                          </button>
-                        </form>
-                        <a href="edit/<%= car.id %>" class="btn btn-custom_edit">
-                          <img src="./assets/img/icons/Edit.svg" alt="" />
-                          Edit
-                        </a>            
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <% });%>
+<%- include("../builtin/getUpdate.ejs") %> <%- include("../builtin/getFormatMoney.ejs") %> <% cars.forEach(car => { %>
+<div class="col-4">
+  <div class="card">
+    <img src="<%= car.image %>" class="card-img-top p-5" alt="..." />
+    <div class="card-body">
+      <h6 class="card-subtitle"><%= car.name %> / <%= car.type %></h6>
+      <h5 class="card-title my-3">Rp. <%= getMoneyFormat(car.rentPrice) %> / hari</h5>
+      <p class="card-text">
+        <img src="./assets/img/icons/clock.svg" alt="" />
+        <%= getUpdatedAt(car.updatedAt) %>
+      </p>
+      <div class="d-flex justify-content-between gap-3 align-items-center">
+        <form action="/delete/<%= car.id %>">
+          <button class="btn btn-custom_delete" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <img src="./assets/img/icons/Trash.svg" alt="" />
+            Delete
+          </button>
+          <%- include("./modal.ejs") %>
+        </form>
+        <button class="btn btn-custom_edit">
+          <img src="./assets/img/icons/Edit.svg" alt="" />
+          <a href="edit/<%= car.id %>">Edit</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<% });%>
